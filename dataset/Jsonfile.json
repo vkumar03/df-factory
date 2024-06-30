@@ -1,0 +1,19 @@
+{
+	"name": "Jsonfile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "data"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

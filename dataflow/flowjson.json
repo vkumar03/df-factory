@@ -1,0 +1,52 @@
+{
+	"name": "flowjson",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "csvfile",
+						"type": "DatasetReference"
+					},
+					"name": "logscv"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Jsonfile",
+						"type": "DatasetReference"
+					},
+					"name": "jsonformat"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          {Correlation id} as string,",
+				"          {Operation name} as string,",
+				"          Status as string,",
+				"          {Event category} as string,",
+				"          Level as string,",
+				"          Time as string,",
+				"          Subscription as string,",
+				"          {Event initiated by} as string,",
+				"          {Resource type} as string,",
+				"          {Resource group} as string,",
+				"          Resource as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> logscv",
+				"logscv sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> jsonformat"
+			]
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "AzureSynapsejson",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "json_file"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
