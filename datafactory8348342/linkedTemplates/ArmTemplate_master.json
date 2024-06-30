@@ -1,0 +1,168 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactory8348342"
+		},
+		"AzureDataLake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLake'"
+		},
+		"AzureSqlDatabase_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase'"
+		},
+		"AzureSynapseAnalytics1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSynapseAnalytics1'"
+		},
+		"AzureSynapseAnalytics2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSynapseAnalytics2'"
+		},
+		"AzureSynapseAnalytics3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSynapseAnalytics3'"
+		},
+		"AzureDataLake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalake4040043.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "devuat.database.windows.net"
+		},
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sampledb"
+		},
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "workspace40545553.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "pooldb"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminsqluser"
+		},
+		"AzureSynapseAnalytics2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "workspac.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "pooldb"
+		},
+		"AzureSynapseAnalytics2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladminuser"
+		},
+		"AzureSynapseAnalytics3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "workspac.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics3_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "pooldb"
+		},
+		"AzureSynapseAnalytics3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladminuser"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "datafactory8348342_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLake_accountKey": {
+						"value": "[parameters('AzureDataLake_accountKey')]"
+					},
+					"AzureSqlDatabase_password": {
+						"value": "[parameters('AzureSqlDatabase_password')]"
+					},
+					"AzureSynapseAnalytics1_password": {
+						"value": "[parameters('AzureSynapseAnalytics1_password')]"
+					},
+					"AzureSynapseAnalytics2_password": {
+						"value": "[parameters('AzureSynapseAnalytics2_password')]"
+					},
+					"AzureSynapseAnalytics3_password": {
+						"value": "[parameters('AzureSynapseAnalytics3_password')]"
+					},
+					"AzureDataLake_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLake_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabase_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_userName')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_server')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_database')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_userName')]"
+					},
+					"AzureSynapseAnalytics2_properties_typeProperties_server": {
+						"value": "[parameters('AzureSynapseAnalytics2_properties_typeProperties_server')]"
+					},
+					"AzureSynapseAnalytics2_properties_typeProperties_database": {
+						"value": "[parameters('AzureSynapseAnalytics2_properties_typeProperties_database')]"
+					},
+					"AzureSynapseAnalytics2_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSynapseAnalytics2_properties_typeProperties_userName')]"
+					},
+					"AzureSynapseAnalytics3_properties_typeProperties_server": {
+						"value": "[parameters('AzureSynapseAnalytics3_properties_typeProperties_server')]"
+					},
+					"AzureSynapseAnalytics3_properties_typeProperties_database": {
+						"value": "[parameters('AzureSynapseAnalytics3_properties_typeProperties_database')]"
+					},
+					"AzureSynapseAnalytics3_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSynapseAnalytics3_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

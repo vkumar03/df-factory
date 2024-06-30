@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactory8348342"
+		},
+		"AzureDataLake_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase_password": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_password": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics2_password": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics3_password": {
+			"value": ""
+		},
+		"AzureDataLake_properties_typeProperties_url": {
+			"value": "https://datalake4040043.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "devuat.database.windows.net"
+		},
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "sampledb"
+		},
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_server": {
+			"value": "workspace40545553.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_database": {
+			"value": "pooldb"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+			"value": "adminsqluser"
+		},
+		"AzureSynapseAnalytics2_properties_typeProperties_server": {
+			"value": "workspac.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics2_properties_typeProperties_database": {
+			"value": "pooldb"
+		},
+		"AzureSynapseAnalytics2_properties_typeProperties_userName": {
+			"value": "sqladminuser"
+		},
+		"AzureSynapseAnalytics3_properties_typeProperties_server": {
+			"value": "workspac.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics3_properties_typeProperties_database": {
+			"value": "pooldb"
+		},
+		"AzureSynapseAnalytics3_properties_typeProperties_userName": {
+			"value": "sqladminuser"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
